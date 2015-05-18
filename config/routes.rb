@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   get 'api/v1/tags' => 'api#tags'
   post 'api/v1/match/mine' => 'api#match_mine'
 
+  #controller :api, path: 'api/v1' do
+  #  match 'match/mine', via: [ :post, :options]
+  #end
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
