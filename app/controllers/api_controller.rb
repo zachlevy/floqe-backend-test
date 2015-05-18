@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  # protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session
   # skip_before_filter :verify_authenticity_token
 
   # CORS
@@ -19,16 +19,17 @@ class ApiController < ApplicationController
     if request.method == 'OPTIONS'
       headers['Access-Control-Allow-Origin'] = '*'
       headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
-      headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token, content-type'
+      headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version, Token'
       headers['Access-Control-Max-Age'] = '1728000'
 
       render :text => '', :content_type => 'text/plain'
     end
   end
 
-  
   respond_to :json
+
   def tags
+    puts "tags"
     render json: {
       "success" => true,
       "result" => [
@@ -59,6 +60,7 @@ class ApiController < ApplicationController
   end
 
   def match_mine
+    puts "match_mine"
     render json: {
       "success" => true,
       "result" => [
