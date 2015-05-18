@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # floqe
 gem 'responders', '~> 2.0'
+gem 'rack-cors', :require => 'rack/cors'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
